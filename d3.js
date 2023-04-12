@@ -1,21 +1,20 @@
 // generating random points
 const svg = d3.select("body")
-  .append("svg")
-  .attr("width", 500)
-  .attr("height", 500);
-
+.append("svg")
+.attr("width", 500)
+.attr("height", 500);
 const data = d3.range(100).map(() => {
-  return [Math.random() * 500, Math.random() * 500];
+return [Math.random() * 500, Math.random() * 500];
 });
 
 svg.selectAll("circle")
-  .data(data)
-  .enter()
-  .append("circle")
-  .attr("cx", (d) => d[0])
-  .attr("cy", (d) => d[1])
-  .attr("r", 5)
-  .attr("fill", "black");
+.data(data)
+.enter()
+.append("circle")
+.attr("cx", (d) => d[0])
+.attr("cy", (d) => d[1])
+.attr("r", 5)
+.attr("fill", "black");
 
 // generating pie chart
 d3.csv("titanic.csv").then((data) => {
